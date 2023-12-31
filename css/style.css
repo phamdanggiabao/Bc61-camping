@@ -1,0 +1,329 @@
+/* reset css khi bắt đầu một dự án mới  */
+/* reset các thuộc tính css mặc định của trình duyệt  */
+
+/* quy tắc  */
+* {
+    margin: 0;
+    padding: 0;
+
+      /* chiều dài của thẻ html = padding + đường viền + chiều  
+dài nội dung   
+25% = nội dung + 40px + đường viền
+chiều dài của thẻ html = 25% + 40px */
+    box-sizing: border-box; 
+}
+
+
+/* loại bỏ đi sự ảnh hưởng của thuộc tính float khi sử dụng
+làm mất đi chiều cao của thẻ cha */
+/* Bất cứ khi nào float xong đều sẽ có một thẻ div mang class
+clear nằm dằng sau để loại bỏ đi sự ảnh hưởng của float */
+.clear {
+    clear:both ;
+}
+
+/* css liên quan về header  */
+.header {
+    background-color: #F8E1DB;
+    padding: 10px 57px;
+}
+
+
+.header ul li { 
+    /* Khi muốn  chiều dài thẻ bằng chiều dài nội dung mà
+    vẫn muốn chỉnh chiều cao chiều dài, margin... thì sử 
+    dụng giá trị inline-block */
+
+    display:inline-block ; 
+    margin: 0px 10px ;
+    /* height: 500px ; */
+}
+
+.header ul li a {
+    /* text-decoration:line- underline =; gạch dưới nội dung */
+    /* text-decoration: line-through; = gạch ngang nội dung*/
+    text-decoration: none ;
+    /* Đối với thẻ a khi chỉnh sửa màu nội dung phải gọi Selector */
+ /* tới thẳng thẻ a vì thẻ a tự động có màu riêng */
+    color:black   ;
+}
+
+
+
+.demo1 {
+    background-color: red ;
+    color: white ;
+
+    /* Thuộc tính margin là thuộc tính giúp phần tử html đẩy 1 khoảng cách  */
+    /* tính từ đường viền của thẻ html đó  */
+    /* Margin khi nhận vào một giá trị sẽ điều chỉnh cho
+    cả 4 hướng
+    Margin nhận vào hai giá trị thì giá trị đầu tiên sẽ 
+    điều chỉnh là trên dưới, giá trị 2 sẽ là điều chỉnh
+    trái phải */
+    /* Margin nhận vào 4 giá trị sẽ điều chỉnh theo 4 hướng
+    trên, phải, dưới, trái */
+
+    /* margin: 20px 40px 60px 80px  */
+    margin-left: 80px ;
+
+    /* padding giống với margin chỉ khác là padding sẽ đẩy
+    tính từ đường viền vào bên trong phần nội dung một khoảng */
+    /* padding: 20px;  */
+
+    padding-top: 100px ;
+}
+
+.demo2 {
+    background-color: black;
+    color: white ;
+}
+
+
+
+
+/* css banner  */
+.banner {
+    /* vh( view port height) */
+    background-image: url(./../Image/BG.png);
+    /* full chiều cao từ trên xuống 1 màn hình là vh  */
+    height: 100vh ;
+    /* Thu nhỏ cho kích thước vừa đủ nằm bên trong wed  */
+    background-size: cover ;
+    /* giúp chúng ta xác định tấm hình dc lập lại bao nhiêu lần  */
+    background-repeat: no-repeat ;
+    /* canh chỉnh hình ảnh  */
+    background-position: center ;
+
+}
+
+/* css explore  */
+.explore {
+padding: 50px 0;
+background-color: #FAF4F2;
+}
+
+.explore .explore_title{ 
+    text-align: center ;
+    color : #8D8D8D ;
+}
+ .explore .explore_content .explore_content_item{    
+ float: left ;
+    /* khi các phần tử sử dụng float, nhớ lưu ý để nằm trên cùng
+    một dòng thì các phần tử này phải có tổng chiều dài là 100% */
+    width:  calc(100% / 4) ;
+    padding: 30px 20px ;
+    /* box-sizing: border-box;  */
+    /* chiều dài của thẻ html = padding + đường viền + chiều   
+dài nội dung   
+25% = nội dung + 40px + đường viền
+chiều dài của thẻ html = 25% + 40px */
+}
+
+.explore .explore_content .explore_content_item .item_bg {
+    background-color: white ;
+    color: #8D8D8D ;
+    padding: 30px ;
+    text-align: center ;
+    /* Khi sử dụng border-radius: 50% sẽ tự động bo phần tử
+    html thành hình tròn nếu như width và height bằng nhau*/
+    border-radius: 25px;
+
+}
+
+.explore .explore_content .explore_content_item .item_bg
+img {
+    width: 100% ;
+    border-radius: 25px ;
+}
+
+.explore .explore_content .explore_content_item .item_bg 
+h3{
+    color:black ;
+    margin: 15px 0 ;
+
+    /* Thuộc tính line-height trong CSS giúp bạn thay đổi chiều cao của 
+    hộp chứa dòng nội dung hiển thị.  */
+    line-height: 28px ;
+
+}
+
+.explore .explore_content .explore_content_item .item_bg 
+p{
+    margin-bottom: 10px ;
+    line-height: 28px ;
+    
+}
+
+.explore .explore_content .explore_content_item .item_bg button{
+    border-radius: 30px ;
+    padding: 9px 55px ;  
+    margin-top: 10px;
+    color:#8D8D8D ;
+
+    /* chỉnh sửa màu đường viền  */
+    /* border-color:#8D8D8D ; */
+    /* chỉnh sửa kiểu đường viền  */
+    /* border-style: none ; */
+    /* chỉnh sửa độ dày của đường viền  */
+    /* border-width: 10px;  */
+
+    /* chỉnh sửa cả 3 thuộc tính  */
+    border:   none #8D8D8D ;
+
+ 
+}
+
+.explore .explore_content .explore_content_item .item_bg div{
+    position: relative;
+}
+
+.explore .explore_content .explore_content_item i{
+    color:#E76F51 ;
+    /* position: relative ; */
+    position:absolute;
+    /* Khi top nhận giá trị âm sẽ dịch lên trên 1 khoảng
+    còn giá trị dương thì dịch xuống 1 khoảng */
+    top: 30px ; 
+    /* left nhận giá trị dương đẩy 1 khoảng từ trái qua 
+    còn nhận giá trị âm sẽ dịch 1 khoảng từ phải qua  */
+    /* left:-50px; */
+    /* Với bottom thì ngược lại với top  */
+    /* bottom: 50px; */
+    right: 30px;
+    
+
+    /* cách 1 để đưa trái tim nằm giữa  */
+    /* top: 30px;
+    right:10px ; 
+    width:50px;
+    background-color: rgba (255, 255, 255, 0.777); 
+    line-height: 50px; */
+
+    /* cách 2  */
+    padding:12px;
+    background-color: rgba(255, 255, 255, 0.701);
+    border-radius: 10px;
+
+
+}
+
+.explore .explore_content .view_all {
+    text-align: center;
+}
+
+.explore .explore_content .view_all button{
+    border: 1px solid #EA7151 ;
+    background-color: unset;
+    border-radius:20px ;
+    padding:10px 50px;
+    color:#EA7151;
+}
+
+
+
+.social {
+    padding:px 0;
+    background-color: #F8E1DB;
+    margin-bottom: 100px;
+    border-radius: 20px;
+}
+
+.social .social_img{
+    background-image: url(./../Image/mask.png);
+    background-size:cover;
+    background-position: center;
+}
+
+.social .social_img img{
+    width:100%;
+}
+
+.social_img,.social_content{
+    float:left;
+    width:50%;
+}
+
+.social_contetn{
+    float:left;
+    padding-top:70px;
+}
+
+.content_left,.content_right{
+    float:left;
+    width:50%;
+}
+
+.social .social_content{
+    line-height: 30px;
+    padding-top: 100px;
+    color:gray;
+}
+
+.social .social_content i{
+    color:#E76F51;
+}
+
+.social .social_content .content_left h3{
+    padding:20px 0;
+}
+
+.social .social_content .content_right h3{
+    padding:20px 0;
+    
+}
+
+.social .social_content .content_right i{
+    font-size: 25px;
+    padding:0 5px;
+    
+}
+
+.footer{
+    background-color: #F8E1DB;
+    padding:50px 0;
+  
+    border-radius: 100px 100px 0 0;
+    padding:30px 0;
+   
+    
+}
+
+
+
+.footer  .content_1{
+    float:left;
+    width:40%;
+    line-height: 28px;
+    padding:70px 40px 0px 50px;
+}
+
+.footer  .content_2{
+    float:left;
+    width:20%;
+    line-height: 28px;
+    padding:70px 40px 0px 50px;
+}
+.footer  .content_3{
+    float:left;
+    width:20%;
+    line-height:28px;
+    padding:70px 40px 0px 50px;
+}
+
+.footer   .content_4{
+    float:left;
+    width:20%;
+    line-height: 28px;
+    padding:70px 40px 0px 50px;
+
+}
+
+
+.footer .content_p h5{
+text-align: center;
+line-height: 80px;
+font-size: 15px;
+color:#3B3735;
+}
+
